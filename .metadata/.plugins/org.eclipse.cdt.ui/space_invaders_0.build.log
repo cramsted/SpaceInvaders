@@ -1,0 +1,33 @@
+
+**** Build of configuration Debug for project space_invaders_0 ****
+
+make all 
+Building file: ../src/real_time_clock.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../space_invaders_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -MMD -MP -MF"src/real_time_clock.d" -MT"src/real_time_clock.d" -o"src/real_time_clock.o" "../src/real_time_clock.c"
+Finished building: ../src/real_time_clock.c
+' '
+Building target: space_invaders_0.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../space_invaders_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.20.b -mno-xl-soft-mul -o"space_invaders_0.elf"  ./src/platform.o ./src/real_time_clock.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: space_invaders_0.elf
+' '
+Invoking: MicroBlaze Print Size
+mb-size space_invaders_0.elf  |tee "space_invaders_0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   9210	    392	   2158	  11760	   2df0	space_invaders_0.elf
+Finished building: space_invaders_0.elf.size
+' '
+Invoking: Xilinx ELF Check
+elfcheck space_invaders_0.elf -hw ../../SpaceInvaders_hw_platform/system.xml -pe microblaze_0  |tee "space_invaders_0.elf.elfcheck"
+elfcheck
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../SpaceInvaders_hw_platform/system.xml -pe
+microblaze_0 space_invaders_0.elf 
+
+ELF file	: space_invaders_0.elf
+elfcheck passed.
+Finished building: space_invaders_0.elf.elfcheck
+' '
