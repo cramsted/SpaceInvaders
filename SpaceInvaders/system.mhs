@@ -208,3 +208,12 @@ BEGIN fit_timer
  PORT Interrupt = fit_timer_0_Interrupt
 END
 
+BEGIN dmacontroller
+ PARAMETER INSTANCE = dmacontroller_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_BASEADDR = 0x7b000000
+ PARAMETER C_HIGHADDR = 0x7b00ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+END
+

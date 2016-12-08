@@ -94,6 +94,14 @@
 
 /******************************************************************/
 
+
+/* Definitions for peripheral DMACONTROLLER_0 */
+#define XPAR_DMACONTROLLER_0_BASEADDR 0x7B000000
+#define XPAR_DMACONTROLLER_0_HIGHADDR 0x7B00FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver BRAM */
 #define XPAR_XBRAM_NUM_INSTANCES 2
 

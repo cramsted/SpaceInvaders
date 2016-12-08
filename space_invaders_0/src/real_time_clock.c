@@ -194,29 +194,29 @@ void interrupt_handler_dispatcher(void* ptr) {
 	}
 }
 
-int main(void) {
-	init_platform();
-	// Initialize the GPIO peripherals.
-	int success;
-	print("hello world\n\r");
-	success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
-	// Set the push button peripheral to be inputs.
-	XGpio_SetDataDirection(&gpPB, 1, 0x0000001F);
-	// Enable the global GPIO interrupt for push buttons.
-	XGpio_InterruptGlobalEnable(&gpPB);
-	// Enable all interrupts in the push button peripheral.
-	XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
-
-	microblaze_register_handler(interrupt_handler_dispatcher, NULL);
-	XIntc_EnableIntr(XPAR_INTC_0_BASEADDR,
-			(XPAR_FIT_TIMER_0_INTERRUPT_MASK | XPAR_PUSH_BUTTONS_5BITS_IP2INTC_IRPT_MASK));
-	XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
-	microblaze_enable_interrupts();
-
-	while (1)
-		; // Program never ends.
-
-	cleanup_platform();
-
-	return 0;
-}
+//int main(void) {
+//	init_platform();
+//	// Initialize the GPIO peripherals.
+//	int success;
+//	print("hello world\n\r");
+//	success = XGpio_Initialize(&gpPB, XPAR_PUSH_BUTTONS_5BITS_DEVICE_ID);
+//	// Set the push button peripheral to be inputs.
+//	XGpio_SetDataDirection(&gpPB, 1, 0x0000001F);
+//	// Enable the global GPIO interrupt for push buttons.
+//	XGpio_InterruptGlobalEnable(&gpPB);
+//	// Enable all interrupts in the push button peripheral.
+//	XGpio_InterruptEnable(&gpPB, 0xFFFFFFFF);
+//
+//	microblaze_register_handler(interrupt_handler_dispatcher, NULL);
+//	XIntc_EnableIntr(XPAR_INTC_0_BASEADDR,
+//			(XPAR_FIT_TIMER_0_INTERRUPT_MASK | XPAR_PUSH_BUTTONS_5BITS_IP2INTC_IRPT_MASK));
+//	XIntc_MasterEnable(XPAR_INTC_0_BASEADDR);
+//	microblaze_enable_interrupts();
+//
+//	while (1)
+//		; // Program never ends.
+//
+//	cleanup_platform();
+//
+//	return 0;
+//}
